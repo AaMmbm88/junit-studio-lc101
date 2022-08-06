@@ -11,13 +11,13 @@ public class BonusBinarySearchTest {
 @Test
     public void oneNumberInArray(){
     int[] oneIntArr = {3};
-    assertEquals(0, BonusBinarySearch.binarySearch(oneIntArr,3), .001);
+    assertEquals(0, BonusBinarySearch.binarySearch(oneIntArr,3));
 }
 
 @Test
     public void oddNumberIntsInArray(){
     int[] oddNumberArray = {1,3,5,7,9};
-    assertEquals(2, BonusBinarySearch.binarySearch(oddNumberArray, 5), .001);
+    assertEquals(2, BonusBinarySearch.binarySearch(oddNumberArray, 5));
 }
 
 @Test
@@ -39,9 +39,21 @@ public class BonusBinarySearchTest {
 //}
 
 @Test
-public void searchForIntNotInArray(){
+public void searchForIntGreaterThanArrayMax(){
     int[] array = {1,2,3,4,5,6};
     assertEquals(-1, BonusBinarySearch.binarySearch(array, 7));
+}
+
+@Test
+    public void searchForIntLessThanArrayMin(){
+    int[] array = {7,8,9,10,11};
+    assertEquals(-1, BonusBinarySearch.binarySearch(array, 6));
+}
+
+@Test
+    public void emptyArray(){
+    int[] emptyArray = {};
+    assertEquals(-1, BonusBinarySearch.binarySearch(emptyArray, 1));
 }
 
 
